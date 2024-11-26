@@ -1,0 +1,10 @@
+<h2>Verify OTP</h2>
+<form method="post">
+    {% csrf_token %}
+    {% if error %}
+        <p style="color: red;">{{ error }}</p>
+    {% endif %}
+    <label for="otp">Enter OTP:</label>
+    <input type="text" name="otp" id="otp" required>
+    <button type="submit">Verify</button>
+</form>
